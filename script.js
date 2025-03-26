@@ -11,12 +11,12 @@ function afficherPanier() {
     let contenuPanier = document.getElementById("contenu-panier");
     let totalElement = document.getElementById("total");
     
-    contenuPanier.innerHTML = "";
+    contenuPanier.innerHTML = ""; // On vide l'ancien contenu
     panier.forEach(item => {
         let li = document.createElement("li");
         li.textContent = `${item.nom} - ${item.prix} 🪙`;
         contenuPanier.appendChild(li);
     });
 
-    totalElement.textContent = total;
+    totalElement.textContent = total + " 🪙"; // On met à jour le total
 }
