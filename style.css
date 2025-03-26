@@ -1,25 +1,30 @@
+/* Style général */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e3f2fd; /* Bleu clair */
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
+/* En-tête */
 header {
-    background-color: #ff9800;
+    background-color: #0d47a1; /* Bleu foncé */
     color: white;
     padding: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
+/* Panier */
 #panier {
     background-color: white;
     padding: 15px;
     margin: 20px auto;
-    width: 320px;
+    width: 350px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    text-align: left;
 }
 
 #contenu-panier {
@@ -29,7 +34,7 @@ header {
 }
 
 #contenu-panier li {
-    padding: 5px;
+    padding: 8px;
     border-bottom: 1px solid #ddd;
     font-size: 16px;
 }
@@ -37,43 +42,55 @@ header {
 #total {
     font-weight: bold;
     font-size: 20px;
-    color: #ff9800;
+    color: #0d47a1;
 }
 
+/* Boutique */
 .boutique {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 20px;
+    padding: 30px;
 }
 
+/* Cartes produits */
 .carte {
     background: white;
-    padding: 15px;
-    width: 220px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.2s ease-in-out;
 }
 
+.carte:hover {
+    transform: scale(1.05);
+}
+
+/* Image des produits */
 .carte img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
+    border: 2px solid #0d47a1;
 }
 
+/* Boutons */
 .carte button {
-    background: #ff9800;
+    background: #1565c0; /* Bleu plus clair */
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-top: 12px;
+    border-radius: 6px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
 .carte button:hover {
-    background: #e68900;
+    background: #0d47a1; /* Bleu foncé */
 }
