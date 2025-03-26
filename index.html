@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magasin de Mme Jager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue chez Mme Jager</h1>
+        <div id="panier">
+            <h2>🛒 Panier</h2>
+            <ul id="contenu-panier"></ul>
+            <p>Total : <span id="total">0</span> 🪙</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="boutique">
+            <!-- Exemple de carte produit -->
+            <div class="carte">
+                <img src="hippogriffe1.jpg" alt="Hippogriffe noir">
+                <h3>Hippogriffe noir</h3>
+                <p class="prix">5 🪙</p>
+                <button onclick="ajouterAuPanier('Hippogriffe noir', 5)">Ajouter au panier</button>
+            </div>
+
+            <div class="carte">
+                <img src="hippogriffe2.jpg" alt="Hippogriffe blanc">
+                <h3>Hippogriffe blanc</h3>
+                <p class="prix">8 🪙</p>
+                <button onclick="ajouterAuPanier('Hippogriffe blanc', 8)">Ajouter au panier</button>
+            </div>
+            
+            <!-- Ajoute plus de créatures ici -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
