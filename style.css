@@ -1,38 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 header {
     background-color: #ff9800;
-    padding: 10px;
     color: white;
+    padding: 20px;
+    font-size: 24px;
 }
 
 #panier {
     background-color: white;
-    padding: 10px;
-    margin: 10px auto;
-    width: 300px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 20px auto;
+    width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contenu-panier {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contenu-panier li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ff9800;
 }
 
 .boutique {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 15px;
     padding: 20px;
 }
 
 .carte {
     background: white;
-    border-radius: 10px;
     padding: 15px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .carte img {
@@ -41,12 +63,17 @@ header {
 }
 
 .carte button {
-    background: orange;
+    background: #ff9800;
     color: white;
     border: none;
     padding: 10px;
-    cursor: pointer;
     width: 100%;
     margin-top: 10px;
     border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.carte button:hover {
+    background: #e68900;
 }
