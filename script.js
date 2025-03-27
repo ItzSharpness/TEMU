@@ -48,6 +48,30 @@ document.addEventListener("DOMContentLoaded", function () {
             let prix = parseInt(this.getAttribute("data-prix"));
 
             panier.push({ nom, prix });
+            mettreAJourPanier
+    });
+});
+    document.addEventListener("DOMContentLoaded", function () {
+    let panier = [];
+
+    function mettreAJourPanier() {
+        let listePanier = document.getElementById("contenu-panier");
+        listePanier.innerHTML = "";
+
+        panier.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = `${item.nom} - ${item.prix} 🪙`;
+            listePanier.appendChild(li);
+        });
+    }
+
+    // 🛒 Ajouter au panier
+    document.querySelectorAll(".ajouter-panier").forEach(button => {
+        button.addEventListener("click", function () {
+            let nom = this.getAttribute("data-nom");
+            let prix = parseInt(this.getAttribute("data-prix"));
+
+            panier.push({ nom, prix });
             mettreAJourPanier();
         });
     });
@@ -58,3 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
         mettreAJourPanier();
     });
 });
+    
