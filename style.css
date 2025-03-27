@@ -1,30 +1,41 @@
-/* Style général */
+/* 🌌 Style général avec un fond magique */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e3f2fd; /* Bleu clair */
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
     margin: 0;
     padding: 0;
     text-align: center;
+    overflow-x: hidden;
 }
 
-/* En-tête */
+/* 🏆 En-tête stylé */
 header {
-    background-color: #0d47a1; /* Bleu foncé */
+    background: linear-gradient(90deg, #1565c0, #0d47a1);
     color: white;
     padding: 20px;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* Panier */
+/* 🌠 Effets sur les sections */
+section {
+    padding: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🛒 Panier avec un design pro */
 #panier {
-    background-color: white;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
     margin: 20px auto;
     width: 350px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    text-align: left;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 #contenu-panier {
@@ -34,63 +45,81 @@ header {
 }
 
 #contenu-panier li {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 18px;
 }
 
 #total {
     font-weight: bold;
-    font-size: 20px;
-    color: #0d47a1;
+    font-size: 22px;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
 }
 
-/* Boutique */
+/* 🎁 Boutique avec effets stylés */
 .boutique {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    gap: 25px;
+    padding: 40px;
 }
 
-/* Cartes produits */
+/* 📦 Cartes des produits */
 .carte {
-    background: white;
-    padding: 20px;
-    width: 250px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
     text-align: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .carte:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
 }
 
-/* Image des produits */
+/* 📷 Image des créatures */
 .carte img {
     width: 100%;
-    border-radius: 8px;
-    border: 2px solid #0d47a1;
+    border-radius: 10px;
+    border: 2px solid #ffcc00;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Boutons */
+.carte img:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+/* 🔘 Boutons ultra stylés */
 .carte button {
-    background: #1565c0; /* Bleu plus clair */
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
     color: white;
     border: none;
     padding: 12px;
     width: 100%;
-    margin-top: 12px;
-    border-radius: 6px;
-    font-size: 16px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 15px rgba(255, 153, 0, 0.4);
 }
 
 .carte button:hover {
-    background: #0d47a1; /* Bleu foncé */
+    background: linear-gradient(90deg, #ff9900, #ff6600);
+    transform: scale(1.1);
+}
+
+/* ✨ Animation d’apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
