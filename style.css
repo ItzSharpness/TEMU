@@ -9,6 +9,57 @@ body {
     overflow-x: hidden;
 }
 
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+    color: #0044cc;
+    text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.2);
+}
+
+.produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px auto;
+    width: 200px;
+    text-align: center;
+}
+
+.produit img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produit p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.ajouter-panier {
+    background: linear-gradient(90deg, #0055ff, #0033cc);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ajouter-panier:hover {
+    background: linear-gradient(90deg, #0033cc, #001199);
+    transform: scale(1.05);
+}
+
+
 /* 🏆 En-tête stylé */
 header {
     background: linear-gradient(90deg, #1565c0, #0d47a1);
