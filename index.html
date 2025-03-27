@@ -9,80 +9,59 @@
 <body>
     <header>
         <h1>Bienvenue chez Mme Jager</h1>
-        <div id="panier">
-            <h2>🛒 Panier</h2>
-            <ul id="contenu-panier"></ul>
-            <p>Total : <span id="total">0</span> 🪙</p>
-        </div> <!-- panier -->
-        <div id="panier">
-    <h2>🛒 Panier</h2>
-    <ul id="contenu-panier"></ul>
-    <button id="reset-panier">🔄 Réinitialiser le panier</button>
-        </div>
-        <link rel="stylesheet" href="style.css">
-
-        
     </header>
 
     <main>
-        <div class="boutique">
-            <!-- Exemple de carte produit -->
-            <div class="carte">
+        <section id="boutique">
+            <h2>🦅 Hippogriffes</h2>
+            <div class="produit">
                 <img src="hippogriffe1.jpg" alt="Hippogriffe noir">
-                <h3>Hippogriffe noir</h3>
-                <p class="prix">5 🪙</p>
-                <button onclick="ajouterAuPanier('Hippogriffe noir', 5)">Ajouter au panier</button>
+                <p>Hippogriffe noir - 5 🪙</p>
+                <button class="ajouter-panier" data-nom="Hippogriffe noir" data-prix="5">Ajouter au panier</button>
             </div>
-
-            <div class="carte">
+            <div class="produit">
                 <img src="hippogriffe2.jpg" alt="Hippogriffe blanc">
-                <h3>Hippogriffe blanc</h3>
-                <p class="prix">8 🪙</p>
-                <button onclick="ajouterAuPanier('Hippogriffe blanc', 8)">Ajouter au panier</button>
+                <p>Hippogriffe blanc - 8 🪙</p>
+                <button class="ajouter-panier" data-nom="Hippogriffe blanc" data-prix="8">Ajouter au panier</button>
             </div>
 
             <h2>🦄 Licornes</h2>
-<div class="produit">
-    <img src="images/licorne_blanche.png" alt="Licorne blanche">
-    <p>Licorne Blanche - 8 🪙</p>
-    <button class="ajouter-panier" data-nom="Licorne Blanche" data-prix="8">Ajouter au panier</button>
-</div>
+            <div class="produit">
+                <img src="images/licorne_blanche.png" alt="Licorne blanche">
+                <p>Licorne Blanche - 8 🪙</p>
+                <button class="ajouter-panier" data-nom="Licorne Blanche" data-prix="8">Ajouter au panier</button>
+            </div>
+            <div class="produit">
+                <img src="images/licorne_noire.png" alt="Licorne noire">
+                <p>Licorne Noire - 10 🪙</p>
+                <button class="ajouter-panier" data-nom="Licorne Noire" data-prix="10">Ajouter au panier</button>
+            </div>
 
-<div class="produit">
-    <img src="images/licorne_noire.png" alt="Licorne noire">
-    <p>Licorne Noire - 10 🪙</p>
-    <button class="ajouter-panier" data-nom="Licorne Noire" data-prix="10">Ajouter au panier</button>
-</div>
+            <h2>🦫 Belettes</h2>
+            <div class="produit">
+                <img src="images/belette_marron.png" alt="Belette marron">
+                <p>Belette Marron - 3 🪙</p>
+                <button class="ajouter-panier" data-nom="Belette Marron" data-prix="3">Ajouter au panier</button>
+            </div>
 
-<h2>🦫 Belettes</h2>
-<div class="produit">
-    <img src="images/belette_marron.png" alt="Belette marron">
-    <p>Belette Marron - 3 🪙</p>
-    <button class="ajouter-panier" data-nom="Belette Marron" data-prix="3">Ajouter au panier</button>
-</div>
+            <h2>🦅 Griffons</h2>
+            <div class="produit">
+                <img src="images/griffon_dore.png" alt="Griffon doré">
+                <p>Griffon Doré - 15 🪙</p>
+                <button class="ajouter-panier" data-nom="Griffon Doré" data-prix="15">Ajouter au panier</button>
+            </div>
+        </section>
 
-<h2>🦅 Griffons</h2>
-<div class="produit">
-    <img src="images/griffon_dore.png" alt="Griffon doré">
-    <p>Griffon Doré - 15 🪙</p>
-    <button class="ajouter-panier" data-nom="Griffon Doré" data-prix="15">Ajouter au panier</button>
-</div>
-            
-
-            <link rel="stylesheet" href="style.css">
-            
-            <!-- Ajoute plus de créatures ici -->
-        </div>
+        <section id="panier">
+            <h2>🛒 Panier</h2>
+            <ul id="contenu-panier"></ul>
+            <p>Total : <span id="total">0</span> 🪙</p>
+            <button id="reset-panier">🔄 Réinitialiser le panier</button>
+        </section>
     </main>
 
     <script src="script.js"></script>
-
-    <div id="panier">
-    <h2>🛒 Panier</h2>
-    <ul id="contenu-panier"></ul>
-    <p>Total : <span id="total">0</span> 🪙</p>
-    </div>
-    
 </body>
 </html>
+
 
