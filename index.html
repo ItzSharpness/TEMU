@@ -54,19 +54,20 @@
 
         <section id="panier">
     <h2>🛒 Panier</h2>
+
+    <!-- Balise des écus avec bouton + -->
+    <div class="ecus">
+        <button class="increment-btn">+</button>
+        <div class="ecus-compte">
+            <span id="compte-ecus">0 🪙</span>
+        </div>
+    </div>
+
     <ul id="contenu-panier"></ul>
     <p>Total : <span id="total">0</span> 🪙</p>
     <button id="reset-panier">🔄 Réinitialiser le panier</button>
         </section>
-
-        <!-- Section des écus -->
-        <section id="ecus">
-            <button class="increment-btn">+</button>
-            <div class="ecus-compte">
-                <span id="compte-ecus">0 🪙</span>
-            </div>
-        </section>
-    </main>
+        
 
     <script src="script.js"></script>
 </body>
