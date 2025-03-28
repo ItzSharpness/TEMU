@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let panier = [];
     let totalPrix = 0;
+    let soldeEcus = 0; // Valeur initiale du solde d'écus (peut être récupérée si elle est déjà présente dans ton code)
 
     function mettreAJourPanier() {
         let listePanier = document.getElementById("contenu-panier");
@@ -34,21 +35,24 @@ document.addEventListener("DOMContentLoaded", function () {
         panier = [];
         mettreAJourPanier();
     });
-});
-// Sélectionner le bouton "+" et l'élément qui affiche les écus
-const incrementBtn = document.querySelector('.increment-btn');
-let soldeEcus = 0; // Valeur initiale du solde d'écus (peut être récupérée si elle est déjà présente dans ton code)
 
-const ecusCompte = document.querySelector('.ecus-compte'); // L'élément qui affiche le solde des écus
+    // 🎯 Gestion du bouton "+" pour rediriger vers YouTube et ajouter des écus
+    const incrementBtn = document.querySelector('.increment-btn');
+    const ecusCompte = document.querySelector('.ecus-compte'); // L'élément qui affiche le solde des écus
 
-// Fonction pour gérer le clic
-incrementBtn.addEventListener('click', () => {
-    // Ouvrir la vidéo YouTube dans un nouvel onglet
-    window.open("https://www.youtube.com/watch?v=ksfPZ4XWzyk", "_blank");
+    // Si le bouton existe
+    if (incrementBtn) {
+        incrementBtn.addEventListener('click', () => {
+            // Ouvrir la vidéo YouTube dans un nouvel onglet
+            window.open("https://www.youtube.com/watch?v=ksfPZ4XWzyk", "_blank");
 
-    // Ajouter 1000 écus
-    soldeEcus += 1000;
+            // Ajouter 1000 écus
+            soldeEcus += 1000;
 
-    // Mettre à jour l'affichage des écus
-    ecusCompte.textContent = soldeEcus; // Mise à jour du solde affiché dans l'élément .ecus-compte
+            // Mettre à jour l'affichage des écus
+            if (ecusCompte) {
+                ecusCompte.textContent = soldeEcus; // Mise à jour du solde affiché dans l'élément .ecus-compte
+            }
+        });
+    }
 });
