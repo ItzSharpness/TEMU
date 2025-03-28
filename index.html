@@ -3,71 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magasin de Mme Jager</title>
+    <title>Boutique Mme Jager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- En-tête -->
     <header>
-        <h1>Bienvenue chez Mme Jager</h1>
+        Boutique de Mme Jager
     </header>
 
-    <main>
-        <section id="boutique">
-            <h2>🦅 Hippogriffes</h2>
-            <div class="produit">
-                <img src="images/hypogriffe-noir.png" alt="Hippogriffe noir">
-                <p>Hippogriffe noir - 5 🪙</p>
-                <button class="ajouter-panier" data-nom="Hippogriffe noir" data-prix="5">Ajouter au panier</button>
-            </div>
-            <div class="produit">
-                <img src="images/hypogriffe-blanc.png" alt="Hippogriffe blanc">
-                <p>Hippogriffe blanc - 8 🪙</p>
-                <button class="ajouter-panier" data-nom="Hippogriffe blanc" data-prix="8">Ajouter au panier</button>
-            </div>
+    <!-- Affichage des écus -->
+    <div class="ecus">
+        <span>🪙</span>
+        <div class="ecus-compte" id="compte-ecus">100</div>
+        <button class="increment-btn" id="increment-btn">+</button>
+    </div>
 
-            <h2>🦄 Licornes</h2>
-            <div class="produit">
-                <img src="images/licorne-blanche.png" alt="Licorne blanche">
-                <p>Licorne Blanche - 8 🪙</p>
-                <button class="ajouter-panier" data-nom="Licorne Blanche" data-prix="8">Ajouter au panier</button>
-            </div>
-            <div class="produit">
-                <img src="images/licorne-noir.png" alt="Licorne noire">
-                <p>Licorne Noire - 10 🪙</p>
-                <button class="ajouter-panier" data-nom="Licorne Noire" data-prix="10">Ajouter au panier</button>
-            </div>
+    <!-- Boutique avec les produits -->
+    <div class="boutique">
+        <!-- Hippogriff -->
+        <div class="produit" data-prix="20" data-animal="Hippogriff">
+            <img src="hippogriff.jpg" alt="Hippogriff">
+            <p>Hippogriff - 20 écus</p>
+            <button class="ajouter-panier">Ajouter au panier</button>
+        </div>
+        
+        <!-- Licorne -->
+        <div class="produit" data-prix="50" data-animal="Licorne">
+            <img src="licorne.jpg" alt="Licorne">
+            <p>Licorne - 50 écus</p>
+            <button class="ajouter-panier">Ajouter au panier</button>
+        </div>
 
-            <h2>🦫 Belettes</h2>
-            <div class="produit">
-                <img src="images/bellete.png" alt="Belette marron">
-                <p>Belette Marron - 3 🪙</p>
-                <button class="ajouter-panier" data-nom="Belette Marron" data-prix="3">Ajouter au panier</button>
-            </div>
+        <!-- Belette -->
+        <div class="produit" data-prix="15" data-animal="Belette">
+            <img src="belette.jpg" alt="Belette">
+            <p>Belette - 15 écus</p>
+            <button class="ajouter-panier">Ajouter au panier</button>
+        </div>
 
-            <h2>🦅 Griffons</h2>
-            <div class="produit">
-                <img src="images/griffon.png" alt="Griffon doré">
-                <p>Griffon Doré - 15 🪙</p>
-                <button class="ajouter-panier" data-nom="Griffon Doré" data-prix="15">Ajouter au panier</button>
-            </div>
-        </section>
+        <!-- Autres produits peuvent être ajoutés ici -->
 
-        <section id="panier">
-            <h2>🛒 Panier</h2>
-            <div class="ecus">
-                <button class="increment-btn">+</button>
-                <div class="ecus-compte">
-                    <span id="compte-ecus">100 🪙</span> <!-- Valeur initiale -->
-                </div>
-            </div>
+    </div>
 
-            <ul id="contenu-panier"></ul>
-            <p>Total : <span id="total">0</span> 🪙</p>
-            <button id="reset-panier">🔄 Réinitialiser le panier</button>
-
-            <button id="pay-btn" onclick="window.location.href='confirmation-achat.html';">Payer</button>
-        </section>
-    </main>
+    <!-- Panier -->
+    <div id="panier">
+        <h2>Votre Panier</h2>
+        <ul id="contenu-panier">
+            <!-- Liste des articles -->
+        </ul>
+        <p id="total">Total : 0 écus</p>
+        <a href="achat.html" id="pay-btn">Payer</a>
+    </div>
 
     <script src="script.js"></script>
 </body>
