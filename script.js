@@ -1,67 +1,90 @@
-// Variables
-let compteEcusu = 100; // Solde initial d'écus
-let panier = []; // Tableau pour les articles ajoutés
-const compteEcusuElem = document.getElementById('compte-ecus');
-const panierElem = document.getElementById('contenu-panier');
-const totalElem = document.getElementById('total');
-const payBtn = document.getElementById('pay-btn');
+document.addEventListener("DOMContentLoaded", function () {
+    let panier = [];
+    let totalPrix = 0;
+    let soldeEcus = 0;
 
-// Mise à jour du solde des écus
-function updateSolde() {
-    compteEcusuElem.textContent = compteEcusu;
-}
+    function mettreAJourPanier() {
+        let listePanier = document.getElementById("contenu-panier");
+        let totalElement = document.getElementById("total");
+        listePanier.innerHTML = "";
+        totalPrix = 0;
 
-// Ajouter au panier
-const ajouterBtns = document.querySelectorAll('.ajouter-panier');
-ajouterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const produit = btn.parentElement;
-        const prix = parseInt(produit.getAttribute('data-prix'));
-        const animal = produit.getAttribute('data-animal');
-        
-        panier.push({ prix, animal });
-        updatePanier();
+        panier.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = `${item.nom} - ${item.prix} 🪙`;
+            listePanier.appendChild(li);
+            totalPrix += item.prix;
+        });
+
+        totalElement.textContent = totalPrix + " 🪙";
+    }
+
+    // 🛒 Ajouter au panier
+    document.querySelectorAll(".ajouter-panier").forEach(button => {
+        button.addEventListener("click", function () {
+            let nom = this.getAttribute("data-nom");
+            let prix = parseInt(this.getAttribute("data-prix"));
+
+            panier.push({ nom, prix });
+            mettreAJourPanier();
+        });
     });
+
+    // 🔄 Reset du panier
+    document.getElementById("reset-panier").addEventListener("click", function () {
+        panier = [];
+        mettreAJourPanier();
+    });
+
+    // 🎯 Gestion du bouton "+" pour rediriger vers YouTube et ajouter des écus
+    const incrementBtn = document.querySelector('.increment-btn');
+    const ecusCompte = document.querySelector('.ecus-compte');
+
+    if (incrementBtn) {
+        incrementBtn.addEventListener('click', () => {
+            // Ouvrir la vidéo YouTube dans un nouvel onglet
+            window.open("https://www.youtube.com/watch?v=ksfPZ4XWzyk", "_blank");
+
+            // Ajouter 1000 écus
+            soldeEcus += 1000;
+
+            // Mettre à jour l'affichage des écus
+            if (ecusCompte) {
+                ecusCompte.textContent = soldeEcus + " 🪙"; // Mise à jour du solde
+            }
+        });
+    }
+
+    // 🪙 Affichage des écus et de l'addition des créatures
+    function afficherSoldeEcus() {
+        const ecusCompte = document.querySelector('.ecus-compte');
+        if (ecusCompte) {
+            ecusCompte.textContent = soldeEcus + " 🪙";
+        }
+    }
+
+    // 🛒 Ajouter des créatures au panier (détails supplémentaires)
+    document.querySelectorAll(".ajouter-panier").forEach(button => {
+        button.addEventListener("click", function () {
+            let nom = this.getAttribute("data-nom");
+            let prix = parseInt(this.getAttribute("data-prix"));
+
+            if (soldeEcus >= prix) {
+                soldeEcus -= prix; // Déduire le prix de la créature du solde
+                panier.push({ nom, prix });
+                mettreAJourPanier();
+                afficherSoldeEcus(); // Mise à jour du solde des écus
+            } else {
+                alert("Vous n'avez pas assez d'écus pour cet achat !");
+            }
+        });
+    });
+
+    // 🪙 Fonction pour ajuster les écus via le bouton "+"
+    document.querySelector('.increment-btn').addEventListener('click', () => {
+        soldeEcus += 1000; // Ajoute 1000 écus
+        afficherSoldeEcus(); // Met à jour l'affichage des écus
+    });
+
 });
 
-// Mise à jour du panier
-function updatePanier() {
-    panierElem.innerHTML = ''; // Réinitialiser le panier
-    let totalPanier = 0;
-    panier.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.animal} - ${item.prix} écus`;
-        panierElem.appendChild(li);
-        totalPanier += item.prix;
-    });
-    totalElem.textContent = `Total : ${totalPanier} écus`;
-}
-
-// Paiement
-if (payBtn) {
-    payBtn.addEventListener('click', function() {
-        const totalPanier = panier.reduce((acc, item) => acc + item.prix, 0);
-
-        // Page d'achat (achat.html)
-        const messageElem = document.getElementById('message-paiement');
-        
-        if (totalPanier > compteEcusu) {
-            messageElem.innerHTML = `
-                <p>Vous n'avez pas les moyens de payer ceci.</p>
-                <a href="index.html" class="retour">Retour à la boutique</a>
-            `;
-        } else {
-            compteEcusu -= totalPanier;
-            panier = []; // Vider le panier
-            updateSolde();
-
-            let articlesCommandes = panier.map(item => item.animal).join(', ');
-
-            messageElem.innerHTML = `
-                <p>Votre achat de ${totalPanier} écus a été effectué. Il vous reste ${compteEcusu} écus.</p>
-                <p>Vous avez commandé : ${articlesCommandes}</p>
-                <a href="index.html" class="retour">Retour à la boutique</a>
-            `;
-        }
-    });
-}
