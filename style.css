@@ -1,116 +1,97 @@
-
+/* 🌌 Style général */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
     margin: 0;
     padding: 0;
     text-align: center;
     overflow-x: hidden;
 }
 
-<h2>🦄 Licornes</h2>
-<div class="produit">
-    <img src="images/licorne_blanche.png" alt="Licorne blanche">
-    <p>Licorne Blanche - 8 🪙</p>
-    <button class="ajouter-panier" data-nom="Licorne Blanche" data-prix="8">Ajouter au panier</button>
-</div>
-
-<div class="produit">
-    <img src="images/licorne_noire.png" alt="Licorne noire">
-    <p>Licorne Noire - 10 🪙</p>
-    <button class="ajouter-panier" data-nom="Licorne Noire" data-prix="10">Ajouter au panier</button>
-</div>
-
-<h2>🦫 Belettes</h2>
-<div class="produit">
-    <img src="images/belette_marron.png" alt="Belette marron">
-    <p>Belette Marron - 3 🪙</p>
-    <button class="ajouter-panier" data-nom="Belette Marron" data-prix="3">Ajouter au panier</button>
-</div>
-
-<h2>🦅 Griffons</h2>
-<div class="produit">
-    <img src="images/griffon_dore.png" alt="Griffon doré">
-    <p>Griffon Doré - 15 🪙</p>
-    <button class="ajouter-panier" data-nom="Griffon Doré" data-prix="15">Ajouter au panier</button>
-</div>
-
-
-h2 {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 24px;
-    color: #0044cc;
-    text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.2);
-}
-
-.produit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #f0f8ff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    margin: 10px auto;
-    width: 200px;
-    text-align: center;
-}
-
-.produit img {
-    width: 150px;
-    height: auto;
-    border-radius: 8px;
-}
-
-.produit p {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.ajouter-panier {
-    background: linear-gradient(90deg, #0055ff, #0033cc);
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.ajouter-panier:hover {
-    background: linear-gradient(90deg, #0033cc, #001199);
-    transform: scale(1.05);
-}
-
-
 /* 🏆 En-tête stylé */
 header {
     background: linear-gradient(90deg, #1565c0, #0d47a1);
     color: white;
     padding: 20px;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* 🌠 Effets sur les sections */
-section {
-    padding: 40px;
-    animation: fadeIn 1s ease-in-out;
+/* 📌 Titres */
+h2 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.5);
 }
 
-/* 🛒 Panier avec un design pro */
+/* 🎁 Boutique */
+.boutique {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 📦 Cartes produits */
+.produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    width: 180px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.produit img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produit p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* 🔘 Boutons */
+.ajouter-panier {
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 3px 10px rgba(255, 153, 0, 0.4);
+}
+
+.ajouter-panier:hover {
+    background: linear-gradient(90deg, #ff9900, #ff6600);
+    transform: scale(1.05);
+}
+
+/* 🛒 Panier */
 #panier {
     background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    padding: 15px;
     margin: 20px auto;
-    width: 350px;
+    width: 300px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.2);
 }
 
 #contenu-panier {
@@ -120,104 +101,55 @@ section {
 }
 
 #contenu-panier li {
-    padding: 10px;
+    padding: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #total {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     color: #ffcc00;
-    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
 }
 
-/* 🎁 Boutique avec effets stylés */
-.boutique {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px;
-}
-
-/* 📦 Cartes des produits */
-.carte {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 25px;
-    width: 260px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.carte:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
-}
-
-/* 📷 Image des créatures */
-.carte img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #ffcc00;
-    transition: transform 0.3s ease-in-out;
-}
-
-.carte img:hover {
-    transform: rotate(3deg) scale(1.05);
-}
-
-/* 🔘 Boutons ultra stylés */
-.carte button {
-    background: linear-gradient(90deg, #ffcc00, #ff9900);
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-    box-shadow: 0px 5px 15px rgba(255, 153, 0, 0.4);
-}
-
-.carte button:hover {
-    background: linear-gradient(90deg, #ff9900, #ff6600);
-    transform: scale(1.1);
-}
-
-/* ✨ Animation d’apparition */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-
+/* 🔄 Reset du panier */
 #reset-panier {
     background: linear-gradient(90deg, #ff5555, #ff0000);
     color: white;
     border: none;
     padding: 12px;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.4);
+    transition: 0.3s;
 }
 
 #reset-panier:hover {
     background: linear-gradient(90deg, #ff0000, #cc0000);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+    .boutique {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produit {
+        width: 90%;
+    }
+
+    #panier {
+        width: 90%;
+    }
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+        
