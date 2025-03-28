@@ -20,6 +20,69 @@ header {
     text-transform: uppercase;
 }
 
+/* 📌 Titres */
+h2 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.5);
+}
+
+/* 🎁 Boutique */
+.boutique {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 📦 Cartes produits */
+.produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    width: 180px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.produit img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produit p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* 🔘 Boutons */
+.ajouter-panier {
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 3px 10px rgba(255, 153, 0, 0.4);
+}
+
+.ajouter-panier:hover {
+    background: linear-gradient(90deg, #ff9900, #ff6600);
+    transform: scale(1.05);
+}
+
 /* 🛒 Panier */
 #panier {
     position: relative;
@@ -50,6 +113,25 @@ header {
     color: #ffcc00;
 }
 
+/* 🔄 Reset du panier */
+#reset-panier {
+    background: linear-gradient(90deg, #ff5555, #ff0000);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#reset-panier:hover {
+    background: linear-gradient(90deg, #ff0000, #cc0000);
+    transform: scale(1.05);
+}
+
 /* 🔑 Button Pay */
 #pay-btn {
     background-color: #ffd700; /* Doré */
@@ -68,95 +150,58 @@ header {
     transform: scale(1.1);
 }
 
-/* 🏠 Retour */
-.retour {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #1565c0;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.retour:hover {
-    background-color: #0d47a1;
-}
-
-/* 🪙 Affichage des écus */
+/* 🪙 Affichage des écus et du bouton + */
 .ecus {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 20px 0;
-}
-
-.ecus span {
-    font-size: 40px;
-}
-
-.ecus-compte {
-    font-size: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
 }
 
 .increment-btn {
-    background-color: #ffd700;
-    color: black;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 50%;
+    background-color: #ffcc00;
     border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
     cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 
 .increment-btn:hover {
-    background-color: #ffcc00;
+    background-color: #ff9900;
     transform: scale(1.1);
 }
 
-/* 🛒 Produits */
-.boutique {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.produit {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 15px;
-    border-radius: 10px;
-    width: 150px;
-    text-align: center;
-}
-
-.produit img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.produit p {
-    font-size: 16px;
+.ecus-compte {
+    font-size: 24px;
     font-weight: bold;
-    color: #ffcc00;
-}
-
-.produit button {
-    background-color: #0d47a1;
-    color: white;
+    background: rgba(0, 0, 0, 0.4);
     padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
 }
 
-.produit button:hover {
-    background-color: #1565c0;
+.ecus-compte:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
 }
 
+/* ✨ Message de paiement */
+#message-paiement {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-top: 20px;
+    font-weight: bold;
+}
 
+/* 🚫 Message d'erreur */
+#message-paiement.erreur {
+    color: #ff5555;
+}
 
