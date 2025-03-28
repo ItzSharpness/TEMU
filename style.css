@@ -147,6 +147,75 @@ h2 {
     }
 }
 
+#panier {
+    position: relative; /* Permet de positionner le contenu par rapport au panier */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.ecus {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffd700; /* Fond doré pour le côté pro */
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ecus-compte {
+    margin-left: 10px;
+}
+
+.increment-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.increment-btn:hover {
+    background-color: darkred; /* Effet au survol */
+}
+
+#contenu-panier {
+    list-style-type: none;
+    padding: 0;
+}
+
+#reset-panier {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#reset-panier:hover {
+    background-color: #ff4500;
+}
+
+
 /* ✨ Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
