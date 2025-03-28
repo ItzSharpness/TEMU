@@ -85,13 +85,14 @@ h2 {
 
 /* 🛒 Panier */
 #panier {
+    position: relative;
     background: rgba(255, 255, 255, 0.2);
-    padding: 15px;
+    padding: 20px;
     margin: 20px auto;
     width: 300px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 #contenu-panier {
@@ -147,29 +148,22 @@ h2 {
     }
 }
 
-#panier {
-    position: relative; /* Permet de positionner le contenu par rapport au panier */
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
+/* ✨ Balise des écus */
 .ecus {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #ffd700; /* Fond doré pour le côté pro */
+    background-color: #ffd700; /* Fond doré pour un look pro */
     border-radius: 8px;
     padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
     font-size: 16px;
     color: #fff;
     font-weight: bold;
+    z-index: 10;
 }
 
 .ecus-compte {
@@ -189,15 +183,11 @@ h2 {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
+    margin-left: 10px;
 }
 
 .increment-btn:hover {
     background-color: darkred; /* Effet au survol */
-}
-
-#contenu-panier {
-    list-style-type: none;
-    padding: 0;
 }
 
 #reset-panier {
@@ -214,11 +204,3 @@ h2 {
 #reset-panier:hover {
     background-color: #ff4500;
 }
-
-
-/* ✨ Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-    }
-        
