@@ -3,46 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation Achat</title>
+    <title>Page de Paiement</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- En-tête -->
     <header>
-        <h1>Achat de Produits</h1>
+        Résumé de votre achat
     </header>
 
-    <div id="message-confirmation" class="message">
-        <!-- Message d'achat ou d'erreur ici -->
+    <!-- Message de paiement -->
+    <div id="message-paiement">
+        <!-- Le message sera mis à jour par JavaScript -->
     </div>
 
-    <script>
-        // Simuler la récupération du panier et du solde actuel
-        let soldeEcus = 100;  // Solde initial
-        let panier = [
-            { nom: "Hippogriffe noir", prix: 5 },
-            { nom: "Licorne Blanche", prix: 8 },
-        ];
+    <!-- Retour à la boutique -->
+    <a href="index.html" class="retour">Retour à la boutique</a>
 
-        let totalAchat = panier.reduce((acc, item) => acc + item.prix, 0);
-
-        // Affichage du panier et du total
-        const messageConfirmation = document.getElementById("message-confirmation");
-        const listePanier = panier.map(item => `<p>${item.nom} - ${item.prix} 🪙</p>`).join('');
-        const totalElement = `<p>Total de l'achat : ${totalAchat} 🪙</p>`;
-
-        if (soldeEcus >= totalAchat) {
-            soldeEcus -= totalAchat;  // Soustraire le total de l'achat
-            messageConfirmation.innerHTML = `
-                <p style="color: green;">Félicitations ! Votre achat a été effectué.</p>
-                <div>${listePanier}</div>
-                ${totalElement}
-                <p>Il vous reste ${soldeEcus} 🪙.</p>
-            `;
-        } else {
-            messageConfirmation.innerHTML = `
-                <p style="color: red;">Désolé, vous n'avez pas assez d'écus. Vous avez seulement ${soldeEcus} 🪙 et le total de l'achat est de ${totalAchat} 🪙.</p>
-            `;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
