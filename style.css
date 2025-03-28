@@ -150,7 +150,7 @@ h2 {
 
 /* ✨ Balise des écus */
 .ecus {
-    position: absolute;
+    position: fixed; /* Fixe la position des écus */
     top: 10px;
     left: 10px;
     background-color: #ffd700; /* Fond doré pour un look pro */
@@ -182,12 +182,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s;
     margin-left: 10px;
 }
 
 .increment-btn:hover {
     background-color: darkred; /* Effet au survol */
+    transform: scale(1.1); /* Animation d'agrandissement */
 }
 
 #reset-panier {
