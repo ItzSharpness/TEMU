@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let panier = [];
     let totalPrix = 0;
-    let soldeEcus = 0;
+    let soldeEcus = 5000; // Valeur initiale du solde d'écus, tu peux ajuster à tes besoins
 
     function mettreAJourPanier() {
         let listePanier = document.getElementById("contenu-panier");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             totalPrix += item.prix;
         });
 
-        totalElement.textContent = totalPrix + " 🪙";
+        totalElement.textContent = totalPrix + " 🪙"; // ✅ Correction de l'affichage
     }
 
     // 🛒 Ajouter au panier
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let prix = parseInt(this.getAttribute("data-prix"));
 
             panier.push({ nom, prix });
-            mettreAJourPanier();
+            mettreAJourPanier(); // ✅ Ajout de l'appel correct
         });
     });
 
@@ -38,8 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🎯 Gestion du bouton "+" pour rediriger vers YouTube et ajouter des écus
     const incrementBtn = document.querySelector('.increment-btn');
-    const ecusCompte = document.querySelector('.ecus-compte');
+    const ecusCompte = document.querySelector('.ecus-compte'); // L'élément qui affiche le solde des écus
 
+    // Si le bouton existe
     if (incrementBtn) {
         incrementBtn.addEventListener('click', () => {
             // Ouvrir la vidéo YouTube dans un nouvel onglet
@@ -50,41 +51,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Mettre à jour l'affichage des écus
             if (ecusCompte) {
-                ecusCompte.textContent = soldeEcus + " 🪙"; // Mise à jour du solde
+                ecusCompte.textContent = soldeEcus; // Mise à jour du solde affiché
             }
         });
     }
 
-    // 🪙 Affichage des écus et de l'addition des créatures
-    function afficherSoldeEcus() {
-        const ecusCompte = document.querySelector('.ecus-compte');
-        if (ecusCompte) {
-            ecusCompte.textContent = soldeEcus + " 🪙";
+    // 🎯 Payer
+    document.getElementById("pay-btn").addEventListener("click", function () {
+        if (totalPrix <= soldeEcus) {
+            // Si les écus sont suffisants, soustraire du solde
+            soldeEcus -= totalPrix;
+
+            // Mettre à jour le solde d'écus affiché
+            if (ecusCompte) {
+                ecusCompte.textContent = soldeEcus;
+            }
+
+            // Réinitialiser le panier après le paiement
+            panier = [];
+            mettreAJourPanier();
+
+            // Afficher une alerte de confirmation
+            alert("Paiement effectué avec succès !");
+        } else {
+            // Si les écus sont insuffisants, afficher un message d'erreur
+            alert("Vous n'avez pas assez d'écus pour effectuer cet achat.");
         }
-    }
-
-    // 🛒 Ajouter des créatures au panier (détails supplémentaires)
-    document.querySelectorAll(".ajouter-panier").forEach(button => {
-        button.addEventListener("click", function () {
-            let nom = this.getAttribute("data-nom");
-            let prix = parseInt(this.getAttribute("data-prix"));
-
-            if (soldeEcus >= prix) {
-                soldeEcus -= prix; // Déduire le prix de la créature du solde
-                panier.push({ nom, prix });
-                mettreAJourPanier();
-                afficherSoldeEcus(); // Mise à jour du solde des écus
-            } else {
-                alert("Vous n'avez pas assez d'écus pour cet achat !");
-            }
-        });
     });
-
-    // 🪙 Fonction pour ajuster les écus via le bouton "+"
-    document.querySelector('.increment-btn').addEventListener('click', () => {
-        soldeEcus += 1000; // Ajoute 1000 écus
-        afficherSoldeEcus(); // Met à jour l'affichage des écus
-    });
-
 });
-
