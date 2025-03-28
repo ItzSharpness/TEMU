@@ -28,27 +28,6 @@ h2 {
     text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.5);
 }
 
-/* 🔑 Bouton "Pay" */
-#pay-btn {
-    background: linear-gradient(90deg, #ffd700, #ffcc00);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.5);
-    text-transform: uppercase;
-}
-
-#pay-btn:hover {
-    background: linear-gradient(90deg, #ffcc00, #ff9900);
-    transform: scale(1.1);
-}
-
-
 /* 🎁 Boutique */
 .boutique {
     display: flex;
@@ -153,76 +132,21 @@ h2 {
     transform: scale(1.05);
 }
 
-/* 📱 Responsive */
-@media screen and (max-width: 768px) {
-    .boutique {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .produit {
-        width: 90%;
-    }
-
-    #panier {
-        width: 90%;
-    }
-}
-
-/* ✨ Balise des écus */
-.ecus {
-    position: fixed; /* Fixe la position des écus */
-    top: 10px;
-    left: 10px;
-    background-color: #ffd700; /* Fond doré pour un look pro */
-    border-radius: 8px;
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-    font-size: 16px;
-    color: #fff;
-    font-weight: bold;
-    z-index: 10;
-}
-
-.ecus-compte {
-    margin-left: 10px;
-}
-
-.increment-btn {
-    background-color: red;
-    border: none;
-    color: white;
+/* 🔑 Button Pay */
+#pay-btn {
+    background-color: #ffd700; /* Doré */
+    color: black;
+    padding: 15px 30px;
     font-size: 18px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    border-radius: 10px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.2s;
-    margin-left: 10px;
-}
-
-.increment-btn:hover {
-    background-color: darkred; /* Effet au survol */
-    transform: scale(1.1); /* Animation d'agrandissement */
-}
-
-#reset-panier {
-    background-color: #ff6347;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
     margin-top: 20px;
+    border: none;
+    transition: 0.3s;
 }
 
-#reset-panier:hover {
-    background-color: #ff4500;
+#pay-btn:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
 }
+
