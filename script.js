@@ -76,27 +76,28 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             alert("Vous n'avez pas assez d'écus pour effectuer cet achat.");
         }
-        // Sélection des éléments HTML
-const validerIdentifiantBtn = document.getElementById("valider-identifiant-btn");
-const identifiantInput = document.getElementById("identifiant-input");
-const compteEcus = document.getElementById("compte-ecus");
+    });
 
-// Fonction pour valider l'identifiant
-validerIdentifiantBtn.addEventListener("click", function() {
-    const identifiant = identifiantInput.value; // Récupère l'identifiant entré
+    // Sélection des éléments HTML pour la validation de l'identifiant
+    const validerIdentifiantBtn = document.getElementById("valider-identifiant-btn");
+    const identifiantInput = document.getElementById("identifiant-input");
+    const compteEcusAffiche = document.getElementById("compte-ecus");
 
-    if (identifiant === "TEMU007") {
-        // Si l'identifiant est correct, on met le solde à infini
-        compteEcus.textContent = "Infini 🪙";
-        alert("Identifiant valide ! Votre solde est maintenant infini.");
-    } else {
-        // Si l'identifiant est incorrect
-        alert("Identifiant incorrect.");
-    }
+    // Fonction pour valider l'identifiant
+    validerIdentifiantBtn.addEventListener("click", function () {
+        const identifiant = identifiantInput.value; // Récupère l'identifiant entré
 
-    // Réinitialisation de l'input après la validation
-    identifiantInput.value = "";
-});
-        
+        if (identifiant === "TEMU007") {
+            // Si l'identifiant est correct, on met le solde à infini
+            soldeEcus = Infinity;
+            compteEcusAffiche.textContent = "Infini 🪙"; // Mettre à jour l'affichage du solde
+            alert("Identifiant valide ! Votre solde est maintenant infini.");
+        } else {
+            // Si l'identifiant est incorrect
+            alert("Identifiant incorrect.");
+        }
+
+        // Réinitialisation de l'input après la validation
+        identifiantInput.value = "";
     });
 });
